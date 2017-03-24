@@ -33,7 +33,8 @@ RESTFeel
 
 
 
-#MongoDB configuration:
+MongoDB configuration:
+==========
 
 Building From Source
 ==========
@@ -120,7 +121,9 @@ Run repair operation to recover your database
 Most likely, your data will be repaired with the --repair option. In case it doesn't, delete the mongod.lock file and then run the above --repair command.
 ```
 
-##MongoDB配置数据库用户名密码
+
+MongoDB配置数据库用户名密码
+======
 
 ####Step1.首先，切换到admin db (schema):
 
