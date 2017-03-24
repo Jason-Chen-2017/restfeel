@@ -125,7 +125,7 @@ Most likely, your data will be repaired with the --repair option. In case it doe
 MongoDB配置数据库用户名密码
 ======
 
-####Step1.首先，切换到admin db (schema):
+#### Step1.首先，切换到admin db (schema):
 
 ```
 > use admin;
@@ -134,7 +134,7 @@ switched to db admin
 ```
 
 
-####Step2.在該 schema 下面設置用戶名，密碼：
+#### Step2.在該 schema 下面設置用戶名，密碼：
 
 ```
 
@@ -155,7 +155,7 @@ Successfully added user: {
 1
 ```
 
-####Step3.admin中直接给restfiddle权限
+#### Step3.admin中直接给restfiddle权限
 
 ```
 var r = 
@@ -335,7 +335,7 @@ Using MongoDB 3.x
 
 
 
-#####Windows
+##### Windows
 
 Download the latest MongoDB version. After kappa release, RESTFiddle has enabled authentication and moved to version 3.0. To start using this, create a configuration file mongo.conf at a location.e.g. F:\restfiddledata\. Create mongo.log file for logging e.g. F:\restfiddledata\log\ This is how configuration file looks like:
 
@@ -378,7 +378,7 @@ mvn spring-boot:run -Drun.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,se
 
 
 
-#####Mac
+##### Mac
 
 
 
