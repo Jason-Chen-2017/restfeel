@@ -32,7 +32,7 @@
                 <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
                     class="icon-bar"></span> <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">RestFeel接口测试平台</a>
+            <a class="navbar-brand" href="/">RestFeel接口测试平台</a>
         </div>
     </div>
 </div>

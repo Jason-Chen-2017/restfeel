@@ -30,7 +30,7 @@
                     </li>
                 </ul>
             </div>
-            <a class="navbar-brand rest-navbar-brand" href="#">RestFeel接口测试平台</a>
+            <a class="navbar-brand rest-navbar-brand" href="/">RestFeel接口测试平台</a>
         </div>
         <div class="navbar-collapse collapse collapse" aria-expanded="false">
             <ul class="nav navbar-nav navbar-right">

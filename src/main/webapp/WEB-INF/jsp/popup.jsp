@@ -5,15 +5,15 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Manage Asserts</h4>
+					<h4 class="modal-title">管理断言</h4>
 				</div>
 				<div class="modal-body">
 					<div id="manageAssertsWrapper">
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary" id="saveAssertsBtn">Save changes</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					<button type="button" class="btn btn-primary" id="saveAssertsBtn">保存</button>
 				</div>
 			</div>
 		</div>
@@ -23,7 +23,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">View Previous Assert Results</h4>
+					<h4 class="modal-title">查看历史</h4>
 				</div>
 				<div class="modal-body" id="prev-res-tab-assert">
 					<table id="prev-res-assert-wrapper" class="table">
