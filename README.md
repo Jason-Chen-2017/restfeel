@@ -194,7 +194,8 @@ db.system.users.insert(r)
 ```
 
 
-或者
+或者db.createUser
+===
 
 
 ```
@@ -243,7 +244,8 @@ Fetched 4 record(s) in 9ms
 
 
 
-參考文章：
+參考文章
+===
 
 [《MongoDB极简教程》第一章 安装&环境配置](http://www.jianshu.com/p/3d6a493f6418)
 
@@ -252,8 +254,6 @@ Fetched 4 record(s) in 9ms
 
 
 
-
-
->源自开源项目：
-[restfeel](http://www.restfeel.com/)
+>基于开源项目开发：
+[Restfiddle](http://www.restfiddle.com/)
 
