@@ -4,8 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
 
 
-    <groupId>com.restfiddle</groupId>
-    <artifactId>restfiddle</artifactId>
+    <groupId>com.restfeel</groupId>
+    <artifactId>restfeel</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -183,7 +183,7 @@
         </repository>
     </repositories>
     <build>
-        <finalName>restfiddle</finalName>
+        <finalName>restfeel</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

@@ -2,7 +2,7 @@ apply plugin: 'maven'
 apply plugin: 'war'
 apply plugin: 'spring-boot'
 
-group = 'com.restfiddle'
+group = 'com.restfeel'
 version = getPomVersion()
 
 description = ""
@@ -21,7 +21,7 @@ repositories {
     maven { url "http://oss.jfrog.org/artifactory/oss-release-local" }
     maven { url "http://jaspersoft.artifactoryonline.com/jaspersoft/jaspersoft-repo/" }
     maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
-    
+
 }
 
 dependencies {
