@@ -11,6 +11,24 @@ body {
     color: rgb(255, 255, 255);
 }
 
+.rest-navbar-item {
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+}
+
+.rest-navbar-item:hover,
+.rest-navbar-item:focus{
+    color: rgb(200, 200, 200);
+}
+
+.nav-item > a:hover,
+.nav-item > a:focus {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+
+
 .rest-footer {
     margin: 450px 0 0 0 !important;
     text-align: center !important;
