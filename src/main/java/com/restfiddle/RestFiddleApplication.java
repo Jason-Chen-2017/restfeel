@@ -15,58 +15,30 @@
  */
 package com.restfiddle;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.core.env.Environment;
 
 /**
  * 应用入口类 main函数
  *
  * @author Jason
- *         2017.3.23 李思琪
+ *         2017.3.28
  */
-
-//@Configuration
-//@EnableAutoConfiguration
-//@ComponentScan({"com.restfiddle"})
-//@SpringBootApplication
 @RestBoot
-public class RestFiddleApplication {
-    public RestFiddleApplication() {
-    }
+public class RestFiddleApplication implements CommandLineRunner {
+    @Autowired
+    private Environment env;
 
     public static void main(String[] args) throws Exception {
         SpringApplication.run(RestFiddleApplication.class, args);
     }
 
-    //static {
-    //
-    //    System.out.println("启动MongoDB ...... ");
-    //    MongodExecutable mongodExecutable = null;
-    //
-    //    try {
-    //        MongodStarter starter = MongodStarter.getDefaultInstance();
-    //
-    //        String bindIp = "localhost";
-    //        int port = 12345;
-    //        IMongodConfig mongodConfig = new MongodConfigBuilder()
-    //            .version(Version.Main.PRODUCTION)
-    //            .net(new Net(bindIp, port, Network.localhostIsIPv6()))
-    //            .build();
-    //
-    //        mongodExecutable = starter.prepare(mongodConfig);
-    //        MongodProcess mongod = mongodExecutable.start();
-    //
-    //        MongoClient mongo = new MongoClient(bindIp, port);
-    //        DB db = mongo.getDB("test");
-    //        DBCollection col = db.createCollection("testCol", new BasicDBObject());
-    //        col.save(new BasicDBObject("testDoc", new Date()));
-    //    } catch (Exception e) {
-    //        System.out.println("启动MongoDB异常：" + e.getMessage());
-    //        e.printStackTrace();
-    //
-    //    } finally {
-    //        if (mongodExecutable != null) { mongodExecutable.stop(); }
-    //    }
-    //
-    //}
+    @Override
+    public void run(String... args) throws Exception {
+        System.out.println("RESTFEEL 启动 .....");
+        System.out.println("应用地址：" + env.getProperty("application.host-uri"));
 
+    }
 }

@@ -13,22 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.restfiddle.controller;
+package com.restfeel.controller;
 
-import java.util.Map;
+public class AppControllerTest {
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-@Controller
-@EnableAutoConfiguration
-@ComponentScan
-public class LoginController {
-
-    @RequestMapping("/login")
-    public String login(Map<String, Object> model) {
-        return "login";
-    }
 }
