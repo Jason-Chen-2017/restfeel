@@ -3,35 +3,31 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.restfiddle</groupId>
-    <artifactId>restfiddle</artifactId>
+
+    <groupId>com.restfeel</groupId>
+    <artifactId>restfeel</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.2.6.RELEASE</version>
-        <!--<version>1.5.2.RELEASE</version>-->
+        <version>1.5.2.RELEASE</version>
     </parent>
     <properties>
-        <spring-data-releasetrain.version>Fowler-SR2</spring-data-releasetrain.version>
+        <!--http://mvnrepository.com/artifact/org.springframework.data/spring-data-releasetrain
+        Bill of materials to make sure a consistent set of versions is used for Spring Data modules.
+        -->
+        <spring-data-releasetrain.version>Hopper-SR8</spring-data-releasetrain.version>
     </properties>
     <dependencies>
-        <!--<dependency>-->
-        <!--<groupId>javax.el</groupId>-->
-        <!--<artifactId>javax.el-api</artifactId>-->
-        <!--<version>2.2.4</version>-->
-        <!--</dependency>-->
-
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -40,7 +36,7 @@
         <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongo-java-driver</artifactId>
-            <version>3.0.4</version>
+            <version>3.4.2</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -140,7 +136,7 @@
         <dependency>
             <groupId>com.mangofactory</groupId>
             <artifactId>swagger-springmvc</artifactId>
-            <version>0.9.4</version>
+            <version>1.0.2</version>
         </dependency>
 
         <dependency>
@@ -172,23 +168,6 @@
             <artifactId>raml-parser</artifactId>
             <version>0.8.12</version>
         </dependency>
-        <!--Developer tools, has version problems -->
-        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools -->
-        <!--<dependency>-->
-        <!--<groupId>org.springframework.boot</groupId>-->
-        <!--<artifactId>spring-boot-devtools</artifactId>-->
-        <!--<optional>true</optional>-->
-        <!--</dependency>-->
-
-
-        <!--embed.mongo-->
-        <!-- https://mvnrepository.com/artifact/de.flapdoodle.embed/de.flapdoodle.embed.mongo -->
-        <!--<dependency>-->
-        <!--<groupId>de.flapdoodle.embed</groupId>-->
-        <!--<artifactId>de.flapdoodle.embed.mongo</artifactId>-->
-        <!--<version>2.0.0</version>-->
-        <!--</dependency>-->
-
 
     </dependencies>
     <repositories>
@@ -202,19 +181,13 @@
             <name>Sonatype Nexus Snapshots</name>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </repository>
-        <!--<repository>-->
-        <!--<id>sonatype-nexus-snapshots</id>-->
-        <!--<name>Sonatype Nexus Snapshots</name>-->
-        <!--<url>http://oss.sonatype.org/content/repositories/snapshots</url>-->
-        <!--</repository>-->
     </repositories>
     <build>
-        <finalName>restfiddle</finalName>
+        <finalName>restfeel</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <!--<version>1.5.2.RELEASE</version>-->
                 <executions>
                     <execution>
                         <goals>
@@ -223,41 +196,37 @@
                     </execution>
                 </executions>
             </plugin>
-
-            <!-- <plugin> <artifactId>maven-war-plugin</artifactId> <configuration>
-                <packagingExcludes>WEB-INF/lib/*.jar</packagingExcludes> </configuration>
-                </plugin> -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.3</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>copy</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>com.github.jsimone</groupId>
-                                    <artifactId>webapp-runner</artifactId>
-                                    <version>8.0.24.0</version>
-                                    <destFileName>webapp-runner.jar</destFileName>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+            <!--<plugin>-->
+            <!--<groupId>org.apache.maven.plugins</groupId>-->
+            <!--<artifactId>maven-dependency-plugin</artifactId>-->
+            <!--<version>2.3</version>-->
+            <!--<executions>-->
+            <!--<execution>-->
+            <!--<phase>package</phase>-->
+            <!--<goals>-->
+            <!--<goal>copy</goal>-->
+            <!--</goals>-->
+            <!--<configuration>-->
+            <!--<artifactItems>-->
+            <!--<artifactItem>-->
+            <!--<groupId>com.github.jsimone</groupId>-->
+            <!--<artifactId>webapp-runner</artifactId>-->
+            <!--<version>8.0.24.0</version>-->
+            <!--<destFileName>webapp-runner.jar</destFileName>-->
+            <!--</artifactItem>-->
+            <!--</artifactItems>-->
+            <!--</configuration>-->
+            <!--</execution>-->
+            <!--</executions>-->
+            <!--</plugin>-->
         </plugins>
     </build>
 </project>
