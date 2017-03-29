@@ -32,7 +32,8 @@ class BlogController(val blogService: BlogService) {
     fun listAll(model: Model): String {
 
         val now = Date()
-        val initBlog = Blog("SpringBoot极简教程", "SpringBoot极简教程" + now, "JasonChen", now, now, 0, now, now.time, 0)
+        val initBlog = Blog("SpringBoot极简教程", "SpringBoot极简教程" + now, "JasonChen", now, now, 0, now, now.time.toLong(), 0)
+//        val initBlog = Blog("SpringBoot极简教程", "SpringBoot极简教程" + now, "JasonChen", now, now, 0, now, now.time, 0)
         blogService.save(initBlog)
 
         val allblogs = blogService.findAll()
