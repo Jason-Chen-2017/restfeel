@@ -4,7 +4,6 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * @author abidk
- *
  */
 public class CommonUtil {
 
@@ -15,7 +14,7 @@ public class CommonUtil {
      * @return
      */
     public static boolean isNull(Object object) {
-	return (null == object) ? true : false;
+        return (null == object) ? true : false;
     }
 
     /**
@@ -23,7 +22,7 @@ public class CommonUtil {
      * @return
      */
     public static boolean isNotNull(Object object) {
-	return !isNull(object);
+        return !isNull(object);
     }
 
     /**
@@ -31,10 +30,10 @@ public class CommonUtil {
      * @return
      */
     public static boolean isEmpty(String string) {
-	return StringUtils.isEmpty(string);
+        return StringUtils.isEmpty(string);
     }
 
     public static boolean isNotEmpty(String string) {
-	return StringUtils.isNotEmpty(string);
+        return StringUtils.isNotEmpty(string);
     }
 }
