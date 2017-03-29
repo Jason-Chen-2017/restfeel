@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./dist/css/mditor.css" />
+    <script src="./dist/js/mditor.js"></script>
+</head>
+<body>
+    <textarea name="editor"></textarea>
+    <script>
+        var mditor =  Mditor.fromTextarea(document.getElementsByName('editor')[0]);
+
+        //获取或设置编辑器的值
+        mditor.on('ready',function(){
+            console.log(mditor.value);
+            mditor.value = '** hello **';
+//            mditor.split = true;	//打开分屏
+            mditor.preivew = true;	//打开预览
+        });
+    </script>
+</body>
+</html>

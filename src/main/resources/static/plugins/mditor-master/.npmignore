@@ -1,0 +1,16 @@
+*.DS_Store
+*.log
+*.sh
+.babelrc
+.eslintrc.yml
+.travis.yml
+server.yml
+server.local.yml
+webpack.config.js
+logs/
+node_modules/
+scripts/
+docs/
+test/
+examples/
+.vscode/

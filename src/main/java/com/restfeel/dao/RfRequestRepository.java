@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.restfeel.entity.RfRequest;
 
+
 public interface RfRequestRepository extends RfRepository<RfRequest, String> {
 
     public List<RfRequest> findDistinctRfRequestByApiUrl();

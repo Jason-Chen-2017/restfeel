@@ -1,0 +1,53 @@
+.mditor {
+  .editor {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    -webkit-text-size-adjust: none;
+    transform: translateZ(0);
+    .textarea, .backdrop {
+      position: absolute;
+      border: none;
+      outline: none;
+      display: block;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      resize: none;
+      background-color: transparent;
+      margin: 0px;
+      overflow-x: hidden;
+      overflow-y: auto;
+      transition: transform 1s;
+      letter-spacing: 1px;
+    }
+    .textarea, .backdrop .inner {
+      padding: 6px 12px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .textarea {
+      z-index: 1;
+      color: #444;
+    }
+    .backdrop {
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+      padding: 0px;
+      .inner {
+        color: transparent;
+        mark {
+          border-radius: 3px;
+          color: transparent;
+          background-color: #ddd;
+          &.active {
+            background-color: lightskyblue;
+          }
+        }
+      }
+    }
+  }
+}
