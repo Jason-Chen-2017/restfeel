@@ -30,6 +30,18 @@ RESTFeel
 ![RESTFeel接口测试平台](https://github.com/Jason-Chen-2017/restfeel/blob/master/restfeel2.png)
 
 
+系统环境
+===
+
+```
+
+OS Mac
+JDK 1.8.0_40
+Gradle 3.5-rc-2
+IDEA2017.1 Ultimate
+MongoDB 3.2.4
+
+```
 
 
 
@@ -257,3 +269,13 @@ Fetched 4 record(s) in 9ms
 >基于开源项目开发：
 [Restfiddle](http://www.restfiddle.com/)
 
+
+
+关于RESTFeel
+===
+
+Copyright 2017-3-17 Jason Chen
+
+Profile - https://jason-chen-2017.github.io/Jason-Chen-2017/
+
+Contact - universsky@163.com
