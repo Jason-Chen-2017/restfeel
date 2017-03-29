@@ -37,7 +37,7 @@
         <div class="nav-item"><a class="navbar-brand rest-navbar-item" href="#" style="color: rgb(255,255,255); font-size: 14px;">项目管理</a></div>
         <div class="nav-item"><a class="navbar-brand rest-navbar-item" href="#" style="color: rgb(255,255,255); font-size: 14px;">持续集成</a></div>
         <div class="nav-item"><a class="navbar-brand rest-navbar-item" href="#" style="color: rgb(255,255,255); font-size: 14px;">缺陷管理</a></div>
-        <div class="nav-item"><a class="navbar-brand rest-navbar-item" href="#" style="color: rgb(255,255,255); font-size: 14px;">技术社区</a></div>
+        <div class="nav-item"><a class="navbar-brand rest-navbar-item" href="blogs.do" style="color: rgb(255,255,255); font-size: 14px;">技术社区</a></div>
 
         <div class="navbar-collapse collapse collapse" aria-expanded="false">
             <ul class="nav navbar-nav navbar-right">

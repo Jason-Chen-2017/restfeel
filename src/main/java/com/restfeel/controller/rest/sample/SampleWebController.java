@@ -32,8 +32,8 @@ import com.restfeel.entity.User;
 @EnableAutoConfiguration
 @ComponentScan
 public class SampleWebController {
-    @Value("${application.message:REST Fiddle}")
-    private String message = "REST Fiddle";
+    @Value("${application.message:REST Feel}")
+    private String message = "REST Feel";
 
     private static final String TEMPLATE = "Hello, %s!";
 
@@ -41,7 +41,7 @@ public class SampleWebController {
     public String home(Map<String, Object> model) {
 	model.put("time", new Date());
 	model.put("message", this.message);
-	return "welcome";
+	return "jsp/welcome";
     }
 
     @RequestMapping("/data")

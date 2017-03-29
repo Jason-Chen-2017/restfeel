@@ -35,7 +35,7 @@ public class DesignModeController {
     public String home(Map<String, Object> model) {
 	model.put("time", new Date());
 	model.put("message", this.message);
-	return "home";
+	return "jsp/home";
     }
 
 }

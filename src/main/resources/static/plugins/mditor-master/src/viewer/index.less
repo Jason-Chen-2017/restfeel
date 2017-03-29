@@ -1,0 +1,38 @@
+.mditor {
+  .viewer {
+    overflow: auto;
+    position: relative;
+    display: inline-block;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    background-color: transparent;
+    margin: 0px;
+    padding: 10px 12px 40px 12px;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    .markdown-body {
+      max-width: 900px;
+      margin: auto;
+      &>ul {
+        list-style-type: initial;
+      }
+      &>ol {
+        list-style-type: decimal;
+      }
+    }
+    .alert {
+      color: #ddd;
+      text-align: center;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      top: 50%;
+      font-size: 20px;
+      margin-top: -15px;
+    }
+  }
+}

@@ -43,12 +43,12 @@ public class AppController {
 	model.put("message", this.message);
 	Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 	model.put("currentUser", (authentication == null) ? null : (UserDetails) authentication.getPrincipal());
-	return "home";
+	return "jsp/home";
     }
 
     @RequestMapping(value = "/oauth/response", method = RequestMethod.GET)
     public String method(HttpServletRequest request) {
-	return "oauth-response";
+	return "jsp/oauth-response";
     }
 
 }
