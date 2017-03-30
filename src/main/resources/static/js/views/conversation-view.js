@@ -13,8 +13,8 @@ define(function (require) {
     require('libs/prettify/prettify');
     require('typeahead');
 
-    require('plugin/jquery.jsonview');
-    require('plugin/bootstrap-dialog');
+    require('jsonview');
+    var BootstrapDialog = require('bootstrapDialog');
 
 
     var lastResponse;
@@ -624,8 +624,13 @@ define(function (require) {
                         }
 
                         var iframe = document.getElementById('response-preview');
-                        iframe = (iframe.contentWindow) ? iframe.contentWindow : (iframe.contentDocument.document) ? iframe.contentDocument.document : iframe.contentDocument;
+
+                        if (iframe.contentWindow != undefined && iframe.contentWindow != null) {
+                            iframe = (iframe.contentWindow) ? iframe.contentWindow : (iframe.contentDocument.document) ? iframe.contentDocument.document : iframe.contentDocument;
+                        }
+
                         iframe.document.open();
+
 
                         if (imageTypes.indexOf(contentType) > -1) {
                             $("#response-wrapper").html('<br><div class="prettyprint">' + '<img src="data:' + contentType + ';base64,' + btoa(result) + '"></img>' + '</div>');
@@ -930,13 +935,16 @@ define(function (require) {
 
             var iframe = document.getElementById("response-preview");
 
-            // if(iframe.contentDocument!=undefined && iframe.contentDocument!=null ){
-            //     iframe = iframe.contentDocument || iframe.contentWindow.document;
-            // }
-
-            if (iframe.documentElement) {
-                iframe.removeChild(iframe.documentElement);
+            if(iframe.contentDocument!=undefined && iframe.contentDocument!=null ){
+                iframe = iframe.contentDocument || iframe.contentWindow.document;
+                if (iframe.documentElement) {
+                    iframe.removeChild(iframe.documentElement);
+                }
             }
+
+            // if (iframe.documentElement) {
+            //     iframe.removeChild(iframe.documentElement);
+            // }
         },
         saveOrUpdateConversation: function () {
             var workspaceId = APP.appView.getCurrentWorkspaceId();
@@ -970,29 +978,29 @@ define(function (require) {
                     success: function () {
                         alert('保存成功!');
 
-                        // BootstrapDialog.show({
-                        //     closable: false,
-                        //     title: '测试用例',
-                        //     message: '保存成功',
-                        //     buttons: [
-                        //         {
-                        //             label: '确定',
-                        //             cssClass: 'btn btn- btn-primary',
-                        //             autospin: false,
-                        //             action: function (dialogRef) {
-                        //                 dialogRef.close();
-                        //             }
-                        //         },
-                        //         {
-                        //             label: '取消',
-                        //             cssClass: 'btn btn-default',
-                        //             autospin: false,
-                        //             action: function (dialogRef) {
-                        //                 dialogRef.close();
-                        //             }
-                        //         }
-                        //     ]
-                        // });
+                        BootstrapDialog.show({
+                            closable: false,
+                            title: '测试用例',
+                            message: '保存成功',
+                            buttons: [
+                                {
+                                    label: '确定',
+                                    cssClass: 'btn btn- btn-primary',
+                                    autospin: false,
+                                    action: function (dialogRef) {
+                                        dialogRef.close();
+                                    }
+                                },
+                                {
+                                    label: '取消',
+                                    cssClass: 'btn btn-default',
+                                    autospin: false,
+                                    action: function (dialogRef) {
+                                        dialogRef.close();
+                                    }
+                                }
+                            ]
+                        });
                     },
                     error: function () {
                         alert('保存请求失败！某个地方可能出错了');

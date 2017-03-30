@@ -4,6 +4,8 @@ import com.restfeel.entity.Blog
 import com.restfeel.service.BlogService
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.context.annotation.ComponentScan
+import org.springframework.security.core.context.SecurityContextHolder
+import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.stereotype.Controller
 import org.springframework.transaction.annotation.Propagation
 import org.springframework.transaction.annotation.Transactional
@@ -30,6 +32,8 @@ import java.util.*
 class BlogController(val blogService: BlogService) {
     @GetMapping("/blogs.do")
     fun listAll(model: Model): String {
+        val authentication = SecurityContextHolder.getContext().authentication
+        model.addAttribute("currentUser", if (authentication == null) null else authentication.principal as UserDetails)
 
         val now = Date()
         val initBlog = Blog()

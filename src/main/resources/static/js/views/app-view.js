@@ -1,11 +1,13 @@
 define(function(require) {
-	
+
 	"use strict";
-	
+
 	var Backbone = require('backbone');
 	var _ = require('underscore');
 	var APP = require('commons/ns');
-	
+
+	require('views/blog-view')
+
 	var MenuView = require("views/main-menu-view");
 	var UserView = require('views/user-view');
 	var TagView = require('views/tag-view');
@@ -19,14 +21,14 @@ define(function(require) {
     var ManageEnvironmentView = require('views/environment-view');
     var HistoryView = require('views/history-view');
 	var tree = require('views/tree-view');
-	
+
 	var WorkspaceEvents = require('events/workspace-event');
 	var ProjectEvents = require('events/project-event');
 	var ConversationEvents = require('events/conversation-event');
-	var UserEvents = require('events/user-event');	
+	var UserEvents = require('events/user-event');
 	var TagEvents = require('events/tag-event');
 	var StarEvent = require('events/star-event');
-	
+
 	var UserCollection = require('collections/users');
 	var TagCollection = require('collections/tags');
 	var EnvironmentCollection = require('collections/environments');
@@ -34,37 +36,37 @@ define(function(require) {
 
     var AppView = Backbone.View.extend({
 		events : {
-	
+
 		},
 		workspaceId : '',
 		projectId : '',
 		requestId : '',
 		initialize : function() {
-			
+
 			APP.Events = _.extend({}, Backbone.Events);
-			
+
 			APP.users = new UserCollection();
 			var userView = new UserView({
 				model : APP.users
 			});
-			
+
 			APP.conversation = new ConversationView();
 			APP.tagsLabel = new TagsView();
             APP.projectRunner = new ProjectRunnerView();
             APP.socketConnector = new SocketConnectorView();
-            
+
             APP.historyView = new HistoryView();
-			
+
 			APP.workspaces = new WorkspaceCollection(); //TODO: REMOVE FROM HERE
 			APP.environments = new EnvironmentCollection();
 		    var workspaceView = new WorkspaceView({
 		    	model : APP.workspaces
 		    });
-		    
+
 			var starView = new StarView({
 				model : APP.node
 			});
-		   
+
 			workspaceView.showDefault();
 		    this.listenTo(APP.Events, WorkspaceEvents.CHANGE,this.handleWorkspaceChange);
 		    this.listenTo(APP.Events, ProjectEvents.CHANGE ,this.handleProjectChange);
@@ -72,10 +74,10 @@ define(function(require) {
 			this.listenTo(APP.Events, StarEvent.CLICK,this.setRequestNodeId);
 		    this.render();
 		},
-		
+
 		handleWorkspaceChange : function(id){
 			console.log('workspace changed :' + id);
-			
+
 			$.ajax({
 				url : APP.config.baseUrl + '/workspaces/' + id,
 				type : 'get',
@@ -87,20 +89,20 @@ define(function(require) {
 					$("#editWorkspaceTextArea").val(workspace.description);
 				}
 			});
-			
+
 			APP.tags = new TagCollection([],{ id : id });
 			var tagView = new TagView({
 				collection : APP.tags
 			});
-			
+
 			APP.tags.fetch();
-			
+
 			tree.resetTree();
 			this.workspaceId = id;
 		},
 		handleProjectChange : function(id){
 			console.log('project changed :'+ id);
-			
+
 			$.ajax({
 				url : APP.config.baseUrl + '/workspaces/' + this.workspaceId + '/projects/' + id,
 				type : 'get',
@@ -111,7 +113,7 @@ define(function(require) {
 					$("#editProjectTextArea").val(project.description);
 				}
 			});
-			
+
 			this.projectId = id;
 		},
 		handleConversationChange : function(id){
@@ -137,5 +139,5 @@ define(function(require) {
 		    console.log("app-view#render");
 		}
     });
-    return AppView;  
+    return AppView;
 });

@@ -19,6 +19,7 @@ import java.util.Date;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,11 +27,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@Controller
+//@Controller
 public class AppController {
     Logger logger = LoggerFactory.getLogger(AppController.class);
 
@@ -38,17 +38,18 @@ public class AppController {
     private String message = "REST Feel";
 
     @RequestMapping("/")
-    public String home(Map<String, Object> model) {
-	model.put("time", new Date());
-	model.put("message", this.message);
-	Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-	model.put("currentUser", (authentication == null) ? null : (UserDetails) authentication.getPrincipal());
-	return "jsp/home";
+    public String home(Map<String, Object> model, HttpServletRequest request, HttpServletResponse response) {
+        model.put("time", new Date());
+        model.put("message", this.message);
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        model.put("currentUser", (authentication == null) ? null : (UserDetails)authentication.getPrincipal());
+
+        return "jsp/home";
     }
 
     @RequestMapping(value = "/oauth/response", method = RequestMethod.GET)
     public String method(HttpServletRequest request) {
-	return "jsp/oauth-response";
+        return "jsp/oauth-response";
     }
 
 }

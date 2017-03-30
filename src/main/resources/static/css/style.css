@@ -3,6 +3,10 @@ body {
     font-size: 13px;
 }
 
+.write-btn {
+    margin-bottom: 30px;
+}
+
 .rest-navbar {
     background-color: rgb(43, 97, 144);
 }
@@ -17,7 +21,7 @@ body {
 }
 
 .rest-navbar-item:hover,
-.rest-navbar-item:focus{
+.rest-navbar-item:focus {
     color: rgb(200, 200, 200);
 }
 
@@ -26,8 +30,6 @@ body {
     color: rgb(255, 255, 255);
     text-decoration: none;
 }
-
-
 
 .rest-footer {
     margin: 450px 0 0 0 !important;
@@ -579,7 +581,7 @@ ul .dropdown-menu li {
 .username {
     background-color: inherit;
     border: none;
-    color: rgb(240, 240, 220);
+    color: rgba(50, 110, 140, 1);
     margin-top: 10px;
     font-size: 18px;
 }
