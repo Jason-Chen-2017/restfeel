@@ -8,38 +8,22 @@
 </head>
 <body>
 <jsp:include page="../top-nav.jsp"></jsp:include>
-
 <div class="col-sm-12">
-    <h2>文章列表</h2>
-    <div class="pull-right">
-        <a href="addBlog" class="btn btn-primary write-btn" target="_blank">写文章</a>
+    <h2>写文章</h2>
+
+    <div class="form-horizontal">
+        <div class="form-group-lg">
+            <div class="form-control">${blog.title}</div>
+            <div>${blog.author}</div>
+        </div>
+
+        <div class="form-group-lg">
+            <textarea class="form-control" rows="100" placeholder="">${blog.content}</textarea>
+        </div>
+
     </div>
-
-    <table id="blogsTable" class="table table-hover">
-        <thead>
-        <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Content</th>
-            <th>CreateTime</th>
-        </tr>
-        </thead>
-        <tbody>
-        <c:forEach items="${blogs}" var="blog">
-            <tr>
-                <td><a href="blog?id=${blog.id}">${blog.title}</a></td>
-                <td>${blog.author}</td>
-                <td>${blog.content}</td>
-                <td>${blog.gmtCreated}</td>
-            </tr>
-        </c:forEach>
-        </tbody>
-
-    </table>
 </div>
 <jsp:include page="../footer.jsp"></jsp:include>
-
-
 <footer class="panel-footer rest-footer">
     <div class="footer-nav">
         <a href="/" target="_blank" hidefocus="true">RestFeel</a>
@@ -53,7 +37,6 @@
     <div class="copyright">RestFeel 2017-7017</div>
 
 </footer>
-
 </body>
 </html>
 

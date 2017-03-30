@@ -8,38 +8,28 @@
 </head>
 <body>
 <jsp:include page="../top-nav.jsp"></jsp:include>
-
 <div class="col-sm-12">
-    <h2>文章列表</h2>
-    <div class="pull-right">
-        <a href="addBlog" class="btn btn-primary write-btn" target="_blank">写文章</a>
-    </div>
+    <h2>写文章</h2>
 
-    <table id="blogsTable" class="table table-hover">
-        <thead>
-        <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Content</th>
-            <th>CreateTime</th>
-        </tr>
-        </thead>
-        <tbody>
-        <c:forEach items="${blogs}" var="blog">
-            <tr>
-                <td><a href="blog?id=${blog.id}">${blog.title}</a></td>
-                <td>${blog.author}</td>
-                <td>${blog.content}</td>
-                <td>${blog.gmtCreated}</td>
-            </tr>
-        </c:forEach>
-        </tbody>
+    <form id="writeBlogForm" class="form-horizontal">
+        <div class="form-group-lg">
+            <label>标题</label>
+            <input type="text" name="title" class="form-control" placeholder="文章标题">
+        </div>
 
-    </table>
+        <div class="form-group-lg">
+            <label>标题</label>
+            <textarea type="text" name="content" class="form-control" rows="100" placeholder=""></textarea>
+        </div>
+
+        <div class="form-group-lg">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-lg btn-primary" id="writeBlogFormSubmitBtn">保存并发表</button>
+            </div>
+        </div>
+    </form>
 </div>
 <jsp:include page="../footer.jsp"></jsp:include>
-
-
 <footer class="panel-footer rest-footer">
     <div class="footer-nav">
         <a href="/" target="_blank" hidefocus="true">RestFeel</a>
@@ -53,7 +43,6 @@
     <div class="copyright">RestFeel 2017-7017</div>
 
 </footer>
-
 </body>
 </html>
 

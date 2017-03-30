@@ -10,11 +10,21 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  */
 @Configuration
 class WebMvcConfig : WebMvcConfigurerAdapter() {
+    /**
+     * 统一注册纯RequestMapping跳转View的Controller
+     */
+    override fun addViewControllers(registry: ViewControllerRegistry?) {
+        //这一段等同于com.restfeel.controller.LoginController，静态资源的拦截处理在com.restfeel.config.security.SecurityConfig设置
+        // println("注册Controller： registry.addViewController(\"/login\").setViewName(\"login\")")
+        registry!!.addViewController("/login").setViewName("jsp/login")
+        registry.addViewController("/addBlog").setViewName("jsp/blog/add")
+    }
+
     override fun configureViewResolvers(registry: ViewResolverRegistry?) {
         //等同于在配置文件中配置：
         //spring.view.prefix=/WEB-INF/jsp/
         //spring.view.suffix=.jsp
-         registry!!.jsp("/WEB-INF/", ".jsp") // springboot约定目录
+        registry!!.jsp("/WEB-INF/", ".jsp") // springboot约定目录
 //        //jsp
 //        val jspResolver = InternalResourceViewResolver()
 //        jspResolver.setPrefix("/WEB-INF/")
@@ -34,9 +44,5 @@ class WebMvcConfig : WebMvcConfigurerAdapter() {
 
     }
 
-    override fun addViewControllers(registry: ViewControllerRegistry?) {
-        //这一段等同于com.restfeel.controller.LoginController，静态资源的拦截处理在com.restfeel.config.security.SecurityConfig设置
-        println("注册Controller： registry.addViewController(\"/login\").setViewName(\"login\")")
-        registry!!.addViewController("/login").setViewName("jsp/login")
-    }
+
 }
