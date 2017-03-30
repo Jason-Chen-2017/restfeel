@@ -9,19 +9,9 @@
 <body>
 <jsp:include page="../top-nav.jsp"></jsp:include>
 <div class="col-sm-12">
-    <h2>写文章</h2>
-
-    <div class="form-horizontal">
-        <div class="form-group-lg">
-            <div class="form-control">${blog.title}</div>
-            <div>${blog.author}</div>
-        </div>
-
-        <div class="form-group-lg">
-            <textarea class="form-control" rows="100" placeholder="">${blog.content}</textarea>
-        </div>
-
-    </div>
+    <div>${blog.title}</div>
+    <div>作者: ${blog.author} 日期: <fmt:formatDate pattern="yyyy/MM/dd HH:mm:ss" value="${blog.gmtModified}"/></div>
+    <div>${blog.content}</div>
 </div>
 <jsp:include page="../footer.jsp"></jsp:include>
 <footer class="panel-footer rest-footer">

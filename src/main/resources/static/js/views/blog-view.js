@@ -19,11 +19,11 @@ define(function (require) {
                         alert('保存成功');
                         location.href = 'blogs.do';
                     }else{
-
+                        alert(res);
                     }
                 },
-                error: function () {
-
+                error: function (res) {
+                    alert(res);
                 }
 
             });

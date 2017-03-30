@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,9 +28,9 @@
         <tbody>
         <c:forEach items="${blogs}" var="blog">
             <tr>
-                <td><a href="blog?id=${blog.id}">${blog.title}</a></td>
+                <td><a href="blog?id=${blog.id}" target="_blank">${blog.title}</a></td>
                 <td>${blog.author}</td>
-                <td>${blog.content}</td>
+                <td>${fn: substring(blog.content,0,100)}</td>
                 <td>${blog.gmtCreated}</td>
             </tr>
         </c:forEach>
