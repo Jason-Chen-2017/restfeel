@@ -3,24 +3,24 @@ package com.restfeel.entity
 import org.bson.types.ObjectId
 import org.springframework.data.mongodb.core.mapping.Document
 import java.util.*
-import javax.persistence.Id
 import javax.persistence.Version
 
-@Document
-class Blog(
-        val title: String,
-        val content: String,
-        val author: String,
-        val gmtCreated: Date,
-        val gmtModified: Date,
-        val isDeleted: Int, //1 Yes 0 No
-        val deletedDate: Date,
-        @Id
-        val id: Long,
-        @Version
-        val version: Long) {
+@Document(collection = "blog") // 如果不指定collection，默认遵从命名规则
+class Blog {
+    var title: String = ""
+    var content: String = ""
+    var author: String = ""
+    var gmtCreated: Date = Date()
+    var gmtModified: Date = Date()
+    var isDeleted: Int = 0 //1 Yes 0 No
+    var deletedDate: Date = Date()
+    //@Id 指定生成MongoDB: '_id'
+    var id: String = ObjectId.get().toString()
+    @Version
+    var version: Long = 0
+
     override fun toString(): String {
-        return "Blog(title='$title', content='$content', author='$author', gmtCreated=$gmtCreated, gmtModified=$gmtModified, isDeleted=$isDeleted, deletedDate=$deletedDate, id=$id, version=$version)"
+        return "Blog(title='$title', content='$content', author='$author', gmtCreated=$gmtCreated, gmtModified=$gmtModified, isDeleted=$isDeleted, deletedDate=$deletedDate, id='$id', version=$version)"
     }
 
 }

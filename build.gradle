@@ -100,6 +100,9 @@ dependencies {
     }
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools
+    compile group: 'org.springframework.boot', name: 'spring-boot-devtools'
+
 }
 
 //def getPomVersion() {

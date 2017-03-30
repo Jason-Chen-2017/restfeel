@@ -20,8 +20,20 @@
 <link href="css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
 <link href="css/codemirror.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
-<link href="css/jquery.jsonview.css" rel="stylesheet">
-<link href="css/bootstrap-dialog.css" rel="stylesheet">
+
+<link href="js/plugin/jsonview/jquery.jsonview.css" rel="stylesheet">
+<link href="js/plugin/bootstrap-dialog/bootstrap-dialog.css" rel="stylesheet">
+<link href="js/plugin/datatables/jquery.dataTables.css" rel="stylesheet">
+
+
+
+
+
+
+
+
+
+
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

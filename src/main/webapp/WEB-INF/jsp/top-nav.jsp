@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<div class="navbar navbar-fixed-top rest-navbar">
+<div class="navbar navbar-fixed-top navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -30,14 +30,14 @@
                     </li>
                 </ul>
             </div>
-            <a class="navbar-brand rest-navbar-brand" href="/">RestFeel接口测试平台</a>
+            <a class="navbar-brand" href="/">RestFeel接口测试平台</a>
         </div>
 
-        <div class="nav-item"><a class="navbar-brand rest-navbar-item" href="#" style="color: rgb(255,255,255); font-size: 14px;">需求管理</a></div>
-        <div class="nav-item"><a class="navbar-brand rest-navbar-item" href="#" style="color: rgb(255,255,255); font-size: 14px;">项目管理</a></div>
-        <div class="nav-item"><a class="navbar-brand rest-navbar-item" href="#" style="color: rgb(255,255,255); font-size: 14px;">持续集成</a></div>
-        <div class="nav-item"><a class="navbar-brand rest-navbar-item" href="#" style="color: rgb(255,255,255); font-size: 14px;">缺陷管理</a></div>
-        <div class="nav-item"><a class="navbar-brand rest-navbar-item" href="blogs.do" style="color: rgb(255,255,255); font-size: 14px;">技术社区</a></div>
+        <div><a class="navbar-brand" href="#">需求管理</a></div>
+        <div><a class="navbar-brand" href="#">项目管理</a></div>
+        <div><a class="navbar-brand" href="#">持续集成</a></div>
+        <div><a class="navbar-brand" href="#">缺陷管理</a></div>
+        <div><a class="navbar-brand" href="blogs.do">技术社区</a></div>
 
         <div class="navbar-collapse collapse collapse" aria-expanded="false">
             <ul class="nav navbar-nav navbar-right">
@@ -46,16 +46,17 @@
                 </li>
                 <li class="btn-group">
                     <button type="button" class="username dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        ${currentUser.username}<span class="caret"></span>
+                        <%--${currentUser.username}<span class="caret"></span>--%>
+                        ${sessionScope.currentUser.username}<span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="http://www.restfiddle.com/" target="_blank">关于</a></li>
                         <li class="divider"></li>
-                        <li><a href="https://github.com/Jason-Chen-2017/restfiddle" target="_blank">GitHub</a></li>
+                        <li><a href="https://github.com/Jason-Chen-2017/restfeel" target="_blank">GitHub</a></li>
                         <li class="divider"></li>
                         <li><a href="http://restfiddle.blogspot.com/" target="_blank">文档</a></li>
                         <li class="divider"></li>
-                        <li><a href="https://github.com/Jason-Chen-2017/restfiddle" target="_blank">联系我们</a></li>
+                        <li><a href="https://github.com/Jason-Chen-2017/restfeel" target="_blank">联系我们</a></li>
                         <li class="divider"></li>
                         <li>
                             <form action="/logout">
