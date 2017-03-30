@@ -17,7 +17,7 @@
         <table id="blogsTable" class="table table-striped">
             <thead>
             <tr>
-                <th>Id</th>
+                <%--<th>Id</th>--%>
                 <th>Title</th>
                 <th>Content</th>
                 <th>CreateTime</th>
@@ -26,8 +26,8 @@
             <tbody>
             <c:forEach items="${blogs}" var="blog">
                 <tr>
-                    <td><a href="/blog/${blog.id}">${blog.id}</a></td>
-                    <td>${blog.title}</td>
+                        <%--<td><a href="/blog/${blog.id}">${blog.id}</a></td>--%>
+                    <td><a href="/blog/${blog.id}">${blog.title}</a></td>
                     <td>${blog.content}</td>
                     <td>${blog.gmtCreated}</td>
                 </tr>
@@ -39,8 +39,11 @@
 </div>
 <jsp:include page="../footer.jsp"></jsp:include>
 
-<%--<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>--%>
-<%--<script src="js/blog/blog.js"></script>--%>
+
+<!-- JavaScript -->
+<script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+
+<script src="js/blog/blog.js"></script>
 </body>
 </html>
 

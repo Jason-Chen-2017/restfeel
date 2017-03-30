@@ -32,7 +32,12 @@ class BlogController(val blogService: BlogService) {
     fun listAll(model: Model): String {
 
         val now = Date()
-        val initBlog = Blog("SpringBoot极简教程", "SpringBoot极简教程" + now, "JasonChen", now, now, 0, now, now.time.toLong(), 0)
+        val initBlog = Blog()
+        initBlog.title = "SpringBoot极简教程"
+        initBlog.author = "JasonChen"
+        initBlog.content = "SpringBoot极简教程 发表时间："+now
+        initBlog.gmtCreated = now
+        initBlog.gmtModified = now
 //        val initBlog = Blog("SpringBoot极简教程", "SpringBoot极简教程" + now, "JasonChen", now, now, 0, now, now.time, 0)
         blogService.save(initBlog)
 
@@ -45,8 +50,8 @@ class BlogController(val blogService: BlogService) {
     @ResponseBody
     fun listblogs(model: Model) = blogService.findAll()
 
-    @GetMapping("/findBlog")
+    @GetMapping("/findBlogByTitle")
     @ResponseBody
-    fun findBlog(@RequestParam(value = "title") title: String) = blogService.findByTitle(title)
+    fun findBlogByTitle(@RequestParam(value = "title") title: String) = blogService.findByTitle(title)
 
 }

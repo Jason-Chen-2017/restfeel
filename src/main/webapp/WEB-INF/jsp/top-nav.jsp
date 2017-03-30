@@ -51,11 +51,11 @@
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="http://www.restfiddle.com/" target="_blank">关于</a></li>
                         <li class="divider"></li>
-                        <li><a href="https://github.com/Jason-Chen-2017/restfiddle" target="_blank">GitHub</a></li>
+                        <li><a href="https://github.com/Jason-Chen-2017/restfeel" target="_blank">GitHub</a></li>
                         <li class="divider"></li>
                         <li><a href="http://restfiddle.blogspot.com/" target="_blank">文档</a></li>
                         <li class="divider"></li>
-                        <li><a href="https://github.com/Jason-Chen-2017/restfiddle" target="_blank">联系我们</a></li>
+                        <li><a href="https://github.com/Jason-Chen-2017/restfeel" target="_blank">联系我们</a></li>
                         <li class="divider"></li>
                         <li>
                             <form action="/logout">

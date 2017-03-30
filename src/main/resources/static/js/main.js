@@ -13,7 +13,9 @@ require.config({
 		typeahead : 'libs/typeahead.bundle.min',
 		bloodhound : 'libs/typeahead.bundle.min',
 		bootpag : 'libs/bootpag.min',
-		moment : 'libs/moment'
+		moment : 'libs/moment',
+		datatables: '../plugins/datatables/jquery.dataTables'
+
 	},
 	shim : {
 		'underscore' : {
@@ -40,7 +42,7 @@ require.config({
 		'typeahead' : {
 			deps : ['jquery','bloodhound']
 		}
-		
+
 	}
 });
 
