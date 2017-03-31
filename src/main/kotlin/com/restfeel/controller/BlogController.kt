@@ -34,7 +34,8 @@ class BlogController(val blogService: BlogService) {
         initBlog.title = "SpringBoot极简教程"
         initBlog.author = "JasonChen"
         initBlog.content = "SpringBoot极简教程 发表时间：" + now
-        blogService.save(initBlog)
+        // 测试数据初始化用
+        //blogService.save(initBlog)
 
         val allblogs = blogService.findAll()
         model.addAttribute("blogs", allblogs)
