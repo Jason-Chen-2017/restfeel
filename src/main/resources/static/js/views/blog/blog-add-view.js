@@ -33,7 +33,11 @@ define(function (require) {
                 success: function (data) {
                     if (data) {
                         alert('保存成功');
-                        location.href = 'blogs.do';
+                        // location.href = 'blogs.do';
+                        window.opener = null;
+                        window.open('', '_self');
+                        window.close();
+
                     } else {
                         alert(data);
                     }
