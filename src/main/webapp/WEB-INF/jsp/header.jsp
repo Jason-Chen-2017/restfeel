@@ -24,8 +24,7 @@
 <link href="js/plugin/jsonview/jquery.jsonview.css" rel="stylesheet">
 <link href="js/plugin/bootstrap-dialog/bootstrap-dialog.css" rel="stylesheet">
 <link href="js/plugin/datatables/jquery.dataTables.css" rel="stylesheet">
-
-
+<link href="js/plugin/mditor-master/dist/css/mditor.min.css" rel="stylesheet" />
 
 
 
