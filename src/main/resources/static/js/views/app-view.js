@@ -6,8 +6,6 @@ define(function(require) {
 	var _ = require('underscore');
 	var APP = require('commons/ns');
 
-	require('views/blog-view')
-
 	var MenuView = require("views/main-menu-view");
 	var UserView = require('views/user-view');
 	var TagView = require('views/tag-view');

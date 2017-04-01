@@ -3,6 +3,7 @@
  */
 
 require.config({
+    baseUrl: 'js',
 
     paths: {
         jquery: 'libs/jquery-2.1.4.min',
@@ -20,7 +21,9 @@ require.config({
         moment: 'libs/moment',
         datatables: 'plugin/datatables/jquery.dataTables',
         jsonview: 'plugin/jsonview/jquery.jsonview',
-        bootstrapDialog: 'plugin/bootstrap-dialog/bootstrap-dialog'
+        bootstrapDialog: 'plugin/bootstrap-dialog/bootstrap-dialog',
+        meditor: 'plugin/mditor-master/dist/js/mditor.min',
+        blogView: 'views/blog-view'
 
     },
     shim: {
@@ -56,6 +59,12 @@ require.config({
         },
         'bootstrapDialog': {
             deps: ['jquery']
+        },
+        'meditor': {
+            deps: ['jquery']
+        },
+        'blogView': {
+            deps: ['meditor', 'datatables']
         }
 
     }

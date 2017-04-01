@@ -625,11 +625,12 @@ define(function (require) {
 
                         var iframe = document.getElementById('response-preview');
 
-                        if (iframe.contentWindow != undefined && iframe.contentWindow != null) {
+                        if (iframe != null) {
                             iframe = (iframe.contentWindow) ? iframe.contentWindow : (iframe.contentDocument.document) ? iframe.contentDocument.document : iframe.contentDocument;
+                            iframe.document.open();
                         }
 
-                        iframe.document.open();
+                        // iframe.document.open();
 
 
                         if (imageTypes.indexOf(contentType) > -1) {
@@ -643,13 +644,17 @@ define(function (require) {
                             console.log(2)
                         } else {
                             $("#response-wrapper").html('<div class="prettyprint">' + result.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</div>');
-                            iframe.document.write('<div>' + result + '</div>');
+                            if(iframe!=null){
+                                iframe.document.write('<div>' + result + '</div>');
+                            }
+
                             console.log(3)
                         }
 
-                        iframe.document.close();
-                        iframe.document.body.style.wordWrap = 'break-word';
-
+                        if(iframe!=null) {
+                            iframe.document.close();
+                            iframe.document.body.style.wordWrap = 'break-word';
+                        }
 
                         $("body,html").animate({
                             scrollTop: $('#responseContainer').offset().top
@@ -935,7 +940,7 @@ define(function (require) {
 
             var iframe = document.getElementById("response-preview");
 
-            if(iframe.contentDocument!=undefined && iframe.contentDocument!=null ){
+            if (iframe != null) {
                 iframe = iframe.contentDocument || iframe.contentWindow.document;
                 if (iframe.documentElement) {
                     iframe.removeChild(iframe.documentElement);

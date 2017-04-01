@@ -7,6 +7,15 @@ body {
     margin-bottom: 30px;
 }
 
+.rest-center {
+    text-align: center;
+}
+
+.rest-blog-body {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .rest-navbar {
     background-color: rgb(43, 97, 144);
 }
@@ -32,8 +41,18 @@ body {
 }
 
 .rest-footer {
-    margin: 450px 0 0 0 !important;
-    text-align: center !important;
+    text-align: center;
+    padding: 0 0 100px 0;
+}
+
+.rest-blog-submit-btn {
+    margin: 40px;
+
+}
+
+.blog {
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 #response-preview {

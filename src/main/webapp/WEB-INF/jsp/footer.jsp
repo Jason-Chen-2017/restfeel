@@ -63,17 +63,17 @@
 </script>
 
 <script type="text/template" id="tpl-tag-list-item">
-    <a href="#/workspace/<@=tag.workspaceId@>/tag/<@=tag.id@>" id=<@=tag.id@> class = "tag-name"><span
+    <a href="#/workspace/<@=tag.workspaceId@>/tag/<@=tag.id@>" id=<@=tag.id@> class = "tag-name"></a><span>
             class="glyphicon glyphicon-tag"></span>&nbsp;&nbsp;<@=tag.name@>&nbsp;&nbsp;
-        <div class="btn-group hover-down-arrow">
-            <button type="button" class="dropdown-toggle" data-toggle="dropdown">
-                <span class="fa fa-angle-down"></span> <span class="sr-only">Toggle Dropdown</span>
-            </button>
-            <ul class="dropdown-menu">
-                <li class="edit-tag"><i class="fa fa-pencil fa-fw"></i> Edit Tag</li>
-                <li class="delete-tag"><i class="fa fa-trash-o fa-fw"></i> Delete Tag</li>
-            </ul>
-        </div>
+    <div class="btn-group hover-down-arrow">
+        <button type="button" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="fa fa-angle-down"></span> <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu">
+            <li class="edit-tag"><i class="fa fa-pencil fa-fw"></i> Edit Tag</li>
+            <li class="delete-tag"><i class="fa fa-trash-o fa-fw"></i> Delete Tag</li>
+        </ul>
+    </div>
 </script>
 
 <script type="text/template" id="tpl-tags-list-item">
@@ -94,15 +94,15 @@
     <a href="#" class="list-group-item" data-star-id=<@=node.id@> data-star-ref-id=<@=node.id@> data-toggle="tooltip"
         data-placement="bottom" title=<@=node.apiURL@>>
         <span class="<@=node.className@>"><@=node.methodType@></span>&nbsp;&nbsp;<@=node.name@>
-        <div><span>&nbsp;&nbsp;<@=node.time@></span><span>&nbsp;<@=node.runBy@><span></div>
+        <div><span>&nbsp;&nbsp;<@=node.time@></span><span>&nbsp;<@=node.runBy@></span></div>
     </a>
 </script>
 
 <script type="text/template" id="tpl-tagged-node-list-item">
     <a href="#" class="list-group-item" data-node-id=<@=node.id@> data-tag-node-id=<@=node.id@> data-toggle="tooltip"
-        data-placement="bottom" title=<@=node.apiURL@>>
-        <span class="<@=node.className@>"><@=node.methodType@></span>&nbsp;&nbsp;<@=node.name@>
-        <div><span>&nbsp;&nbsp;<@=node.time@></span><span>&nbsp;<@=node.runBy@><span></div>
+        data-placement="bottom" title=<@=node.apiURL@>></a>
+    <span class="<@=node.className@>"><@=node.methodType@></span>&nbsp;&nbsp;<@=node.name@>
+    <div><span>&nbsp;&nbsp;<@=node.time@></span><span>&nbsp;<@=node.runBy@><span></div>
     </a>
 </script>
 
@@ -334,9 +334,19 @@
     <div id="assertsWrapper">
     </div>
 </script>
-</script>
 <script type="text/template" id="tpl-tree-node">
-&nbsp;<div class="btn-group menu-arrow"><button type="button" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-angle-down" data-toggle="dropdown"></span></button><ul class="dropdown-menu"><li class="edit-node"><i class="fa fa-pencil fa-fw"></i> Edit Node</li><li class="delete-node"><i class="fa fa-trash-o fa-fw"></i> Delete Node</li><li class="copy-node"><i class="fa fa-copy fa-fw"></i> Copy Node</li><li class="run-node"><i class="fa fa-play fa-fw"></i> Run Node</li></ul></div>
+    &nbsp;
+    <div class="btn-group menu-arrow">
+        <button type="button" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-angle-down"
+                                                                                   data-toggle="dropdown"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li class="edit-node"><i class="fa fa-pencil fa-fw"></i> Edit Node</li>
+            <li class="delete-node"><i class="fa fa-trash-o fa-fw"></i> Delete Node</li>
+            <li class="copy-node"><i class="fa fa-copy fa-fw"></i> Copy Node</li>
+            <li class="run-node"><i class="fa fa-play fa-fw"></i> Run Node</li>
+        </ul>
+    </div>
 </script>
 <script type="text/template" id="tpl-tree-folder">
     &nbsp;

@@ -11,18 +11,15 @@ import org.springframework.transaction.annotation.Propagation
 import org.springframework.transaction.annotation.Transactional
 import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.ResponseBody
 import java.util.*
+import javax.servlet.http.HttpServletRequest
 
 /**
- * * 注意:
- *      这里要使用@Controller注解
- *      而不要使用@RestController
- *      否则return "index";只是返回字符串"index"， 不能跳转到index.html
- *
- *      @RestController is a stereotype annotation that combines @ResponseBody and @Controller.
- *      @RestController注解相当于@ResponseBody ＋ @Controller合在一起的作用。
+ * 文章列表，写文章的Controller
+ * @author Jason Chen  2017/3/31 01:10:16
  */
 
 @Controller
@@ -34,20 +31,37 @@ class BlogController(val blogService: BlogService) {
     fun listAll(model: Model): String {
         val authentication = SecurityContextHolder.getContext().authentication
         model.addAttribute("currentUser", if (authentication == null) null else authentication.principal as UserDetails)
-
-        val now = Date()
-        val initBlog = Blog()
-        initBlog.title = "SpringBoot极简教程"
-        initBlog.author = "JasonChen"
-        initBlog.content = "SpringBoot极简教程 发表时间："+now
-        initBlog.gmtCreated = now
-        initBlog.gmtModified = now
-//        val initBlog = Blog("SpringBoot极简教程", "SpringBoot极简教程" + now, "JasonChen", now, now, 0, now, now.time, 0)
-        blogService.save(initBlog)
-
         val allblogs = blogService.findAll()
         model.addAttribute("blogs", allblogs)
         return "jsp/blog/list"
+    }
+
+    @PostMapping("/saveBlog")
+    @ResponseBody
+    fun saveBlog(blog: Blog, request: HttpServletRequest):Blog {
+        blog.author = (request.getSession().getAttribute("currentUser") as UserDetails).username
+        return blogService.save(blog)
+    }
+
+    @GetMapping("/goEditBlog")
+    fun goEditBlog(@RequestParam(value = "id") id: String, model: Model): String {
+        model.addAttribute("blog", blogService.findOne(id))
+        return "jsp/blog/edit"
+    }
+
+    @PostMapping("/editBlog")
+    @ResponseBody
+    fun editBlog(blog: Blog, request: HttpServletRequest) :Blog{
+        blog.author = (request.getSession().getAttribute("currentUser") as UserDetails).username
+        blog.gmtModified = Date()
+        blog.version = blog.version + 1
+        return blogService.save(blog)
+    }
+
+    @GetMapping("/blog")
+    fun blogDetail(@RequestParam(value = "id") id: String, model: Model): String {
+        model.addAttribute("blog", blogService.findOne(id))
+        return "jsp/blog/detail"
     }
 
     @GetMapping("/listblogs")

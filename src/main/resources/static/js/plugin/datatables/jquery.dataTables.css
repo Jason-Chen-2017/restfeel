@@ -21,7 +21,7 @@ table.dataTable tfoot th {
 table.dataTable thead th,
 table.dataTable thead td {
   padding: 10px 18px;
-  border-bottom: 1px solid #111;
+  /*border-bottom: 1px solid #111;*/
 }
 table.dataTable thead th:active,
 table.dataTable thead td:active {
@@ -172,7 +172,7 @@ table.dataTable.display tbody tr:hover.selected > .sorting_3, table.dataTable.or
   background-color: #a5b2cb;
 }
 table.dataTable.no-footer {
-  border-bottom: 1px solid #111;
+  /*border-bottom: 1px solid #111;*/
 }
 table.dataTable.nowrap th, table.dataTable.nowrap td {
   white-space: nowrap;
@@ -416,7 +416,7 @@ table.dataTable td {
   padding: 0 !important;
 }
 .dataTables_wrapper.no-footer .dataTables_scrollBody {
-  border-bottom: 1px solid #111;
+  /*border-bottom: 1px solid #111;*/
 }
 .dataTables_wrapper.no-footer div.dataTables_scrollHead table,
 .dataTables_wrapper.no-footer div.dataTables_scrollBody table {

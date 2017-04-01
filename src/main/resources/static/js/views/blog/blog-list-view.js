@@ -4,27 +4,23 @@
 
 define(function (require) {
     "use strict";
-
-    require('datatables')
-
-    $("#id").unbind("click").bind("click", function () {
-    });
+    require('datatables');
 
     $(function () {
+        // 文章列表
         var aLengthMenu = [10, 20, 50, 100, 200];
         var dataTableOptions = {
             bDestroy: true,
-            dom: 'lfrtip',
             paging: true,
             lengthChange: true,
             searching: true,
             ordering: true,
+            order: [3, "desc"],
             autoWidth: true,
             processing: true,
             stateSave: true,
             responsive: true,
             fixedHeader: false,
-            order: [[0, "asc"]],
             aLengthMenu: aLengthMenu,
             language: {
                 search: "<div style='border-radius:10px;margin-left:auto;margin-right:2px;width:760px;'>_INPUT_ &nbsp;<span class='btn btn-primary'>搜索</span></div>",

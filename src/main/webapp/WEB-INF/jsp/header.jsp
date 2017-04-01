@@ -12,23 +12,21 @@
 
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <%--<link href="css/bootstrap.min.css" rel="stylesheet">--%>
-<link href="css/bootstrap.css" rel="stylesheet">
+
 <link href="css/ui.fancytree.css" rel="stylesheet">
 <link href="css/prettify/prettify.css" rel="stylesheet">
 <link href="css/octicons/octicons.css" rel="stylesheet">
 <link href="css/selectize.default.css" rel="stylesheet">
 <link href="css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
 <link href="css/codemirror.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
 
 <link href="js/plugin/jsonview/jquery.jsonview.css" rel="stylesheet">
 <link href="js/plugin/bootstrap-dialog/bootstrap-dialog.css" rel="stylesheet">
 <link href="js/plugin/datatables/jquery.dataTables.css" rel="stylesheet">
+<link href="js/plugin/mditor-master/dist/css/mditor.min.css" rel="stylesheet" />
+<link href="css/bootstrap.css" rel="stylesheet">
 
-
-
-
-
+<link href="css/style.css" rel="stylesheet">
 
 
 
