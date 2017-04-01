@@ -19,7 +19,6 @@
     <table id="blogsTable" class="table table-hover">
         <thead>
         <tr>
-
             <th>No</th>
             <th>Title</th>
             <th>Author</th>

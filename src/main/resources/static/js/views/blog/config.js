@@ -13,7 +13,6 @@ require.config({
         jsonview: 'plugin/jsonview/jquery.jsonview',
         bootstrapDialog: 'plugin/bootstrap-dialog/bootstrap-dialog',
         meditor: 'plugin/mditor-master/dist/js/mditor.min',
-        blogView: 'views/blog/blog-view'
     },
     shim: {
         'jqueryUi': {
@@ -33,11 +32,7 @@ require.config({
         },
         'meditor': {
             deps: ['jquery']
-        },
-        'blogView': {
-            deps: ['meditor', 'datatables']
         }
-
     }
 });
 

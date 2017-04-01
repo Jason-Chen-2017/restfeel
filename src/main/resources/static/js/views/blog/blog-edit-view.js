@@ -17,26 +17,27 @@ define(function (require) {
         //是否全屏
         mditor.fullscreen = false;	//关闭
 
-        //获取或设置编辑器的值
-        mditor.on('ready', function () {
-            mditor.value = '#Restfeel';
-        });
-
-
         //写文章
-        jQuery("#addBlogBtn").on("click", function () {
+        jQuery("#editBlogBtn").on("click", function () {
             jQuery.ajax({
-                url: 'saveBlog',
                 type: 'POST',
-                data: $('#addBlogForm').serialize(),
+                url: 'editBlog',
+                data: jQuery('#editBlogForm').serialize(),
+                //dataType: 'json',
                 async: false,
+                //在请求之前调用的函数
+                beforeSend: function () {
+                },
                 success: function (data) {
                     if (data) {
                         alert('保存成功');
-                        location.href = 'blogs.do';
+                        history.go(-1);
                     } else {
                         alert(data);
                     }
+                },
+                //调用执行后调用的函数
+                complete: function (XMLHttpRequest, textStatus) {
                 },
                 error: function (data) {
                     alert(data);
