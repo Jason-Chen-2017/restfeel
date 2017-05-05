@@ -51,9 +51,9 @@ require.config({
         'typeahead': {
             deps: ['jquery', 'bloodhound']
         },
-        'datatables': {
-            deps: ['jquery']
-        },
+        // 'datatables': {
+        //     deps: ['jquery']
+        // },
         'jsonview': {
             deps: ['jquery']
         },

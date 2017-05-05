@@ -13,12 +13,17 @@ define(function (require) {
         var html = parser.parse(blogContent);
         $('.markdown-body').append(html);
 
-
         //编辑文章
         $('#goEditBlog').on('click',function () {
             var blogId = $('#blogId').val();
             location.href = 'goEditBlog?id=' + blogId;
-        })
+        });
+
+
+        //源码高亮
+        hljs.initHighlightingOnLoad();
+
+
 
     });
 
