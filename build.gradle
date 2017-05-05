@@ -70,6 +70,8 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-remote-shell')
     compile('org.springframework.boot:spring-boot-starter-aop')
     providedCompile('org.springframework.boot:spring-boot-starter-tomcat')
+
+//    JSP
     compile('javax.servlet:jstl')
     providedCompile('org.apache.tomcat.embed:tomcat-embed-jasper')
 
@@ -113,7 +115,7 @@ dependencies {
 }
 
 compileJava {
-    //options.fork = true
+    options.fork = true
     options.incremental = true
 }
 
