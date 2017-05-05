@@ -89,6 +89,13 @@ dependencies {
         exclude module: 'jdtcore'
         exclude module: 'jackson-annotations'
     }
+
+    // https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.6.1'
+    // https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.6.1'
+
+
     compile('com.mangofactory:swagger-springmvc:0.9.4')
     compile('org.ajar:swagger-spring-mvc-ui:0.4')
     compile('com.google.oauth-client:google-oauth-client:1.19.0')
