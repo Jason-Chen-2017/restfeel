@@ -38,6 +38,7 @@
         <div><a class="navbar-brand" href="#">持续集成</a></div>
         <div><a class="navbar-brand" href="#">缺陷管理</a></div>
         <div><a class="navbar-brand" href="blogs.do">技术社区</a></div>
+        <div><a class="navbar-brand" href="swagger-ui.html">API文档</a></div>
 
         <div class="navbar-collapse collapse collapse" aria-expanded="false">
             <ul class="nav navbar-nav navbar-right">
