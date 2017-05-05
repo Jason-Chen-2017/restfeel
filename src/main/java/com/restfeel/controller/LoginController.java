@@ -32,3 +32,13 @@
 //        return "jsp/login";
 //    }
 //}
+
+//放在WebMvcConfig类里了：registry!!.addViewController("/login").setViewName("jsp/login")
+//
+//    override fun addViewControllers(registry: ViewControllerRegistry?) {
+//    //这一段等同于com.restfeel.controller.LoginController，静态资源的拦截处理在com.restfeel.config.security.SecurityConfig设置
+//    // println("注册Controller： registry.addViewController(\"/login\").setViewName(\"login\")")
+//    registry!!.addViewController("/login").setViewName("jsp/login")
+//    //写文章RequestMapping
+//    registry.addViewController("/addBlog").setViewName("jsp/blog/add")
+//    }
