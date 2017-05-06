@@ -24,7 +24,6 @@
 
         <textarea id="blogContent" style="display: none"><c:out value="${blog.content}"
                                                                 escapeXml='false'></c:out></textarea>
-        <%--<textarea id="blogContent" rows="50" cols="150"><c:out value="${blog.content}" escapeXml='false'></c:out></textarea>--%>
         <div class="markdown-body rest-blog-body"></div>
 
     </div>

@@ -1,5 +1,5 @@
 /**
- * 真正的入口文件main.js。它一般用来对requirejs进行配置，并且载入真正的程序模块。
+ * 入口文件config.js。它一般用来对requirejs进行配置，并且载入真正的程序模块。
  */
 
 require.config({
