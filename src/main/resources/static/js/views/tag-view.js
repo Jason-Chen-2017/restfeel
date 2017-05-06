@@ -1,15 +1,15 @@
-define(function(require) {	
+define(function(require) {
 	"use strict";
-	
+
 	var Backbone = require('backbone');
 	var _ = require('underscore');
-	
+
 	var TagModel = require('models/tag');
 	var TagEvents = require('events/tag-event');
 
 	var TaggedNodeView = require('views/tagged-node-view');
-	
-	var TagListItemView = Backbone.View.extend({	
+
+	var TagListItemView = Backbone.View.extend({
 		tagName : 'li',
 		template : _.template($('#tpl-tag-list-item').html()),
 		events : {
@@ -18,17 +18,19 @@ define(function(require) {
             "click .edit-tag" : "editTag",
             "click .delete-tag" : "deleteTag"
 		},
-		
+
 		render : function() {
-			$(this.el).html(this.template({
-				tag : this.model.toJSON()
-			}));
+			$(this.el).html(this.template(
+				{
+					tag : this.model.toJSON()
+				}
+			));
 			return this;
 		},
 
 		preventParentElmSelection : function(event){
 			event.stopPropagation();
-			
+
 			var currentElm = $(event.currentTarget);
 
 			if(currentElm.hasClass('open')){
@@ -41,14 +43,14 @@ define(function(require) {
 			    currentElm.children("ul").css({"position": "fixed", "left":rect.left , "top": rect.bottom});
 			}
 		},
-        
+
         editTag : function(){
             $("#editTagId").val(this.model.get('id'));
             $("#editTagTextField").val(this.model.get('name'));
             $("#editTagTextArea").val(this.model.get('description'));
             $("#editTagModal").modal("show");
         },
-        
+
         deleteTag : function(){
             $("#deleteTagId").val(this.model.get('id'));
             $("#deleteTagModal").modal("show");
@@ -81,20 +83,33 @@ define(function(require) {
 		initialize : function() {
 		 	this.listenTo(this.collection, 'sync', this.render);
 		},
-			
+
 		render : function(isDefautlView) {
 			var activeTag = this.$el.find('.active')[0];
 			if(activeTag)
 				var activeTagId = $(activeTag).children('a').attr('id');
-			
+
 	        this.$el.html('');
-			_.each(this.collection.models,function(p, index){
+			_.each(this.collection.models, function(p, index){
+
+				console.log("this.collection.models" + this.collection.models)
+
 				p.set('workspaceId',APP.appView.getCurrentWorkspaceId());
 				var tagListView = new TagListItemView({model: p});
+
+				console.log(tagListView.render().el);
+
 				this.$el.append(tagListView.render().el);
+
+                // tagListView.el.childNodes[1].innerText=tagListView.el.childNodes[3].textContent;
+                // tagListView.el.childNodes[1].className="tag-name glyphicon glyphicon-tag";
+                // tagListView.el.childNodes[2].innerText='';
+                // tagListView.el.childNodes[3].textContent='';
+
 			},this);
+
 			console.log("TagView#render");
-			
+
 			if(activeTagId)
 				$('#'+activeTagId).parent('li').addClass('active');
 		}

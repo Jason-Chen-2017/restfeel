@@ -1,20 +1,20 @@
-define(function(require) {	
+define(function(require) {
 	"use strict";
-	
+
 	var Backbone = require('backbone');
 	var _ = require('underscore');
-	
+
 	var TagModel = require('models/tag');
 	var TagEvents = require('events/tag-event');
 	var NodeModel = require('models/node');
-	
-	var TagsListItemView = Backbone.View.extend({	
+
+	var TagsListItemView = Backbone.View.extend({
 		tagName : 'li',
 		template : _.template($('#tpl-tags-list-item').html()),
 		events : {
 			"click input" : "displayLabel"
 		},
-		
+
 		render : function(eventName) {
 			$(this.el).html(this.template({
 				tag : this.model.toJSON()
@@ -38,7 +38,7 @@ define(function(require) {
           this.listenTo(APP.Events, TagEvents.SAVE, this.addTags);
     	},
         addOne : function(tag){
-			var tagsListView = new TagsListItemView({model: tag});    
+			var tagsListView = new TagsListItemView({model: tag});
             $(".label-dropdown-menu").append(tagsListView.render().el);
             $("#tagLabels").append('<span class="label label-default" id ="'+ tag.get('name')+'Label">'+tag.get('name')+'</span>&nbsp;&nbsp;');
             $("#" + tag.get('name')+ "Label").hide();
@@ -72,9 +72,9 @@ define(function(require) {
                         }
                     });
 			       }
-			    });	
-	         
-                		
+			    });
+
+
             }
     	},
 
@@ -89,6 +89,9 @@ define(function(require) {
 			APP.tags.fetch({
 			    success : function(response){
 			    	that.model = response.models;
+
+			    	console.log(response.models);
+
 			    	that.render();
 			    	response.each(function(tag) {
                            $("#" + tag.get('name')).prop("checked",false);
@@ -102,9 +105,9 @@ define(function(require) {
 					    }
 					});
 			    }
-			});			
-			
-			
+			});
+
+
 		},
 		render : function(isDefaultView) {
             this.$el.html('');
