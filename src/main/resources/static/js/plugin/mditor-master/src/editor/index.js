@@ -41,6 +41,7 @@ module.exports = new mokit.Component({
   },
   onCompositionEnd() {
     this._compositionLock = false;
+
     /**
      * 在输入中文时，输入法「候选词面板」位置会发生定位错误
      * 经过反复尝试发现了「规律」，第一次「侯选词」上屏后才会位置错误
@@ -49,6 +50,7 @@ module.exports = new mokit.Component({
      * https://github.com/electron/electron/issues/8894
      * https://github.com/electron/electron/issues/4539
      */
+
     this.textarea.blur();
     this.textarea.focus();
   },

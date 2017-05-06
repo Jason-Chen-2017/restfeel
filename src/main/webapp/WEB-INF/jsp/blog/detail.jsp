@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <jsp:include page="../header.jsp"></jsp:include>
 </head>
@@ -21,10 +21,10 @@
             作者: ${blog.author}
             日期: <fmt:formatDate pattern="yyyy/MM/dd HH:mm:ss" value="${blog.gmtModified}"/>
         </div>
+        <%--escapeXml:是否转换特殊字符--%>
+        <textarea id="blogContent" style="display: none"><c:out value='${blog.content}' escapeXml="true"></c:out></textarea>
 
-        <textarea id="blogContent" style="display: none"><c:out value="${blog.content}"
-                                                                escapeXml='false'></c:out></textarea>
-        <div class="markdown-body rest-blog-body"></div>
+        <div id="rest-blog-body" class="markdown-body rest-blog-body"></div>
 
     </div>
 

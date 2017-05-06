@@ -12,7 +12,7 @@ require.config({
         datatables: 'plugin/datatables/jquery.dataTables',
         jsonview: 'plugin/jsonview/jquery.jsonview',
         bootstrapDialog: 'plugin/bootstrap-dialog/bootstrap-dialog',
-        meditor: 'plugin/mditor-master/dist/js/mditor.min',
+        meditor: 'plugin/mditor-master/dist/js/mditor',
     },
     shim: {
         'jqueryUi': {

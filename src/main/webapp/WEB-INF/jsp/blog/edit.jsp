@@ -21,7 +21,7 @@
         <div class="form-group-lg">
             <label></label>
             <textarea id="blogContentEditor" type="text" name="content" class="form-control" rows="100"
-                      placeholder=""><c:out value="${blog.content}" escapeXml='false'></c:out></textarea>
+                      placeholder=""><c:out value="${blog.content}" escapeXml="true"></c:out></textarea>
         </div>
 
         <div class="form-group-lg">

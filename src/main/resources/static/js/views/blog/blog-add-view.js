@@ -22,6 +22,12 @@ define(function (require) {
             mditor.value = '#Restfeel';
         });
 
+        hljs.initHighlightingOnLoad();
+        //源码高亮
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+
 
         //写文章
         jQuery("#addBlogBtn").on("click", function () {
